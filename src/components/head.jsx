@@ -1,4 +1,8 @@
+import { useEffect, useState } from "react";
+import { LuSunDim } from "react-icons/lu";
+
 export default function Head() {
+   
   return (
     <>
       <header className="backdrop-blur-xl h-20 head bg-white/5 fixed top-0 w-full  ">
@@ -66,6 +70,12 @@ export default function Head() {
                       Projects
                     </a>
                   </li>
+                  {/* <li>
+                    <button className="text-white transition hover:text-red-500 pt-2 " onClick={() =>
+          setTheme(theme === "dark" ? "light" : "dark")
+        }
+                    ><LuSunDim size={25}/></button>
+                  </li> */}
                 </ul>
               </nav>
             </div>

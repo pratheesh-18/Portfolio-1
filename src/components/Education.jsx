@@ -17,7 +17,7 @@ export default function Education() {
                                 <h3 className="text-xl font-bold text-cyan-500">Engineering</h3>
 
                                 <p className="mt-0.5 text-sm text-white">
-                                BTech IT Dr.N.G.P.Institute Of Technology | Current CGPA: 8.2 |
+                                BTech IT Dr.N.G.P.Institute Of Technology | Current CGPA: 8.4 |
                                 </p>
                             </div>
                         </li>
