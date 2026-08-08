@@ -7,12 +7,7 @@ export default function About(){
          <hr  className="text-gray-500 w-[200vh] mx-10"/>
             <h1 className="text-white pt-10 text-center text-4xl font-semibold about" data-aos="zoom-in-up">About <span className="text-cyan-500">Me</span></h1>
             <p className="text-white px-20 pt-10 text-lg" data-aos="fade-right"  data-aos-duration="1000"> Hi My name is Pratheesh ,Im a motivated first-year B.Tech IT student passionate about Full stack developement and eager to learn. I enjoy building responsive web applications and exploring new technologies. I adapt quickly, collaborate well,  and embrace challenges that help me grow. Excited to apply my skills <br />to real-world projects and make a meaningful impact.</p>
-             <div className="flex justify-around pt-10" data-aos="zoom-in" data-aos-duration="1000">
-                <h1 className="text-white border rounded-4xl border-dashed w-[20vh] h-10 text-center p-2"> HTML & CSS-90%</h1>
-                <h1 className="text-white border rounded-4xl border-dashed w-[20vh] h-10 text-center p-2">Javascript-75%</h1>
-                <h1 className="text-white border rounded-4xl border-dashed w-[20vh] h-10 text-center p-2">Tailwind CSS-90%</h1>
-                <h1 className="text-white border rounded-4xl border-dashed w-[20vh] h-10 text-center p-2">React js-75%</h1> 
-             </div>
+             
              <div className="flex px-20 pt-10" data-aos="fade-right"  data-aos-duration="1000">
              <div >
                 <h1 className="text-white ">Phone : 9361029817</h1>
