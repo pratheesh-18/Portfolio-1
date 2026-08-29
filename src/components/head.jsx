@@ -37,10 +37,19 @@ export default function Head() {
 
                   <li>
                     <a
-                      className="text-white  transition hover:text-red-500 "
+                      className="text-white transition hover:text-cyan-400"
                       href="#education"
                     >
-                      Career
+                      Education
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-cyan-400"
+                      href="#internships"
+                    >
+                      Internship
                     </a>
                   </li>
 
@@ -55,7 +64,7 @@ export default function Head() {
 
                   <li>
                     <a
-                      className="text-white  transition hover:text-red-500 "
+                      className="text-white transition hover:text-cyan-400"
                       href="#achievement"
                     >
                       Achievements
@@ -64,7 +73,16 @@ export default function Head() {
 
                   <li>
                     <a
-                      className="text-white  transition hover:text-red-500 "
+                      className="text-white transition hover:text-cyan-400"
+                      href="#certificates"
+                    >
+                      Certificates
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      className="text-white transition hover:text-cyan-400"
                       href="#projects"
                     >
                       Projects

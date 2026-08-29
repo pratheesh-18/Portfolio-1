@@ -14,13 +14,13 @@ const content = [
 export default function Achievements() {
   return (
     <>
-    <div id='achievement'>
+    <div id='achievement' className="relative cyan-center-glow py-6">
     <hr  className="text-gray-500 w-[200vh] mx-10"/>
         <h1 className='text-4xl text-center text-white font-semibold pt-10 ' data-aos="zoom-in-up">My <span className='text-cyan-500'>Achievements</span></h1>
     </div>
-    <div className='flex mt-20' data-aos="zoom-in" data-aos-duration="1000">
+    <div className='flex mt-20 relative cyan-center-glow' data-aos="zoom-in" data-aos-duration="1000">
       {content.map((items, index) => (
-        <div key={index} className="border border-[#0f0f1a]  hover:border-cyan-500 w-[80vh] h-full bg-[#0f0f1a] text-white rounded-xl shadow-lg flex items-start gap-4 mx-20">
+        <div key={index} className="border border-white/10 hover:border-cyan-500 w-[80vh] h-full bg-slate-900/60 backdrop-blur-md text-white rounded-xl shadow-lg flex items-start gap-4 mx-20">
           {/* Icon */}
           <div className="text-violet-400 text-2xl px-5 pt-10">
             <FaAward size={37} />

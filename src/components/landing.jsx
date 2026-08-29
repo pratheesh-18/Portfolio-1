@@ -13,6 +13,9 @@ import Footer from "./Footer";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
+import Certificates from "./Certificates";
+import Internship from "./Internship";
+
 export default function Home() {
   useEffect(() => {
     Aos.init({});
@@ -25,14 +28,17 @@ export default function Home() {
     <>
       <div>
         <Head />
-        <div className="pt-32 home flex justify-around " id="home">
-          <div className="mt-32">
-            <h1 className="text-white  text-xl">WELCOME TO MY WORLD</h1>
-            <h1 className="text-white  text-5xl hero pt-5">
-              Hi, Im{" "}
-              <span className="text-red-500 font-semibold">Pratheesh</span>
+        <div className="min-h-screen pt-32 pb-16 flex flex-col lg:flex-row items-center justify-between pl-[10px] pr-6 max-w-7xl mx-auto gap-12 relative cyan-center-glow" id="home">
+          {/* Left Hero Content */}
+          <div className="flex-1 max-w-xl text-left z-10" data-aos="fade-right">
+            <h3 className="text-sm font-semibold tracking-widest text-cyan-400 uppercase">
+              WELCOME TO MY WORLD
+            </h3>
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight mt-3">
+              Hi, I'm{" "}
+              <span className="text-cyan-400 font-semibold">Pratheesh</span>
             </h1>
-            <h1 className=" text-5xl text-red-500 hero pt-5 font-semibold">
+            <h2 className="text-2xl sm:text-5xl font-bold text-cyan-400 mt-3 hero">
               <Typewriter
                 words={["WEB DEVELOPER", "FULL STACK DEVELOPER"]}
                 loop={0} // 0 = infinite
@@ -42,52 +48,57 @@ export default function Home() {
                 deleteSpeed={60}
                 delaySpeed={1500}
               />
-            </h1>
-            <p className=" text-white text-lg w-[100vh] pt-8 ">
-              {" "}
+            </h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed mt-6">
               Hello, I'm Pratheesh. I am a dedicated Full Stack Developer
-              Committed to delivering clean, efficient, and user-focused
-              solutions.A personal portfolio is a collection of your work,
+              committed to delivering clean, efficient, and user-focused
+              solutions. A personal portfolio is a collection of your work,
               achievements, and skills that highlights your abilities and
-              professional growth.{" "}
+              professional growth.
             </p>
           </div>
-          <Tilt
-            tiltMaxAngleX={30}
-            tiltMaxAngleY={30}
-            perspective={1600}
-            scale={1.10}
-            transitionSpeed={1000}
-          >
-            <div
-              className="relative"
-              data-aos="fade-up-right"
-              data-aos-easing="linear"
-              data-aos-duration="700"
-            >
-              <h1 className="text-white font-bold text-6xl pt-20 image up-down-animation">
-                WEB DEVELOPER
-              </h1>
 
-              <div className="h-[70vh] w-[75vh] absolute top-5 right-4">
+          {/* Right End Image Container with Scanning Animation */}
+          <div className="flex-1 flex justify-center lg:justify-end items-center z-10" data-aos="fade-left">
+            <Tilt
+              tiltMaxAngleX={15}
+              tiltMaxAngleY={15}
+              perspective={1200}
+              scale={1.05}
+              transitionSpeed={1000}
+              glareEnable={true}
+              glareMaxOpacity={0.15}
+              glareColor="#06b6d4"
+            >
+              <div className="relative group w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden border border-cyan-500/40 shadow-[0_0_45px_rgba(6,182,212,0.3)] hover:border-cyan-400 hover:shadow-[0_0_65px_rgba(6,182,212,0.5)] transition-all duration-500">
+                {/* Cyber Laser Scan Line Overlay */}
+                <div className="scan-line" />
+
                 <img
                   src="/pratheesh_profile_new.png"
-                  alt=""
-                  className=" border rounded-[10vh] border-none"
+                  alt="Pratheesh"
+                  className="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent pointer-events-none" />
               </div>
-            </div>
-          </Tilt>
+            </Tilt>
+          </div>
         </div>
 
         <About />
 
         <Education />
+
+        <Internship />
+
         <div className="  p-6">
           <Skills />
         </div>
         <div>
           <Achievements />
+        </div>
+        <div>
+          <Certificates />
         </div>
         <div>
           <Projects />

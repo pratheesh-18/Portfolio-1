@@ -1,48 +1,229 @@
 /* src/App.css */
 @import "tailwindcss";
 
-.head {
-  font-family: "Montserrat", sans-serif;
-}
-.about {
-  font-family: "Montserrat", sans-serif;
-}
-.hero {
-  font-family: "Montserrat", sans-serif;
-}
-.home p {
-  font-family: "Montserrat", sans-serif;
-}
-.image {
-  font-family: "Montserrat", sans-serif;
+:root {
+  font-family: "Inter", "Plus Jakarta Sans", sans-serif;
+  color-scheme: dark;
 }
 
-@keyframes upDown {
-  0%, 100% {
-    transform: translateY(0); /* Initial position */
+body {
+  background-color: black;
+  color: #f8fafc;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center Bright Cyan Ambient Glow Shade for Sections */
+.cyan-center-glow {
+  position: relative;
+}
+
+.cyan-center-glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 85vw);
+  height: min(450px, 65vh);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(6, 182, 212, 0.08) 50%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Profile Image Cyber Scan Line Animation */
+@keyframes scanline {
+  0% {
+    top: 0%;
+    opacity: 0.7;
   }
   50% {
-    transform: translateY(-10px); /* Move up */
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.7;
   }
 }
 
-.up-down-animation {
-  animation: upDown 2s ease-in-out infinite;
+.scan-line {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #06b6d4, #22d3ee, #06b6d4, transparent);
+  box-shadow: 0 0 15px #06b6d4, 0 0 25px #22d3ee;
+  animation: scanline 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Race Loader Speed Lines & Light Trails */
+@keyframes speedStreak {
+  0% {
+    transform: translateX(120vw);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-120vw);
+    opacity: 0;
+  }
+}
+
+.speed-streak {
+  position: absolute;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.9), transparent);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.7);
+  animation: speedStreak 1.6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes wheelRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-spin {
+  transform-origin: center;
+  animation: wheelRotate 0.5s linear infinite;
+}
+
+.head, .hero, .image {
+  font-family: "Montserrat", sans-serif;
 }
 
 .full {
   font-family: "Cinzel", serif;
 }
 
+/* About Section Scoped Typography */
+.about-heading, .about-section h1, .about-section h2, .about-section h3 {
+  font-family: "Space Grotesk", "Poppins", sans-serif;
+}
 
+p, .about-body, .about-section p {
+  font-family: "Space Mono", "Fira Code", "JetBrains Mono", monospace;
+}
+
+.about-section span, .about-section a {
+  font-family: "Inter", sans-serif;
+}
+
+/* About Page Glassmorphism & Card Utilities */
+.about-glass-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-stat-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-stat-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.about-stat-cyan:hover {
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
+}
+
+.about-stat-purple:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+}
+
+.about-stat-green:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.3);
+}
+
+.about-stat-orange:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.3);
+}
+
+/* Social Buttons */
+.about-social-btn {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: justify-center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.about-social-btn:hover {
+  color: #06b6d4;
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+  transform: translateY(-3px);
+}
+
+/* Education Timeline Card */
+.about-edu-card {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-edu-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 12px 35px -10px rgba(6, 182, 212, 0.25);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+/* Up-Down Animation */
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.up-down-animation {
+  animation: upDown 3s ease-in-out infinite;
+}
+
+/* Particle Background Effect - Preserved Exact Setup */
 .particles-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure the particles stay behind the content */
+  z-index: -1;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .particle {
@@ -64,27 +245,18 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-120vh); /* Move particles up */
+    transform: translateY(-120vh);
     opacity: 0;
   }
 }
-
-body{
-
-  background-color: black;
-  
-}
-
 
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-10px);
   }
-
   100% {
     transform: translateY(0px);
   }
